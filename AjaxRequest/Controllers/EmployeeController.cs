@@ -16,7 +16,7 @@ namespace AjaxRequest.Controllers
        
 
         [HttpGet]
-        //public IActionResult Index(string? str)
+       
         public IActionResult Index()
         {
             var employeeList = _Context.Employees.ToList();
@@ -48,7 +48,7 @@ namespace AjaxRequest.Controllers
         {
             var emp = _Context.Employees.Where(x => x.Id == id).FirstOrDefault();
             var CheckAjaxType = HttpContext.Request.Headers["X-Requested-With"].ToString();
-            //bool 
+           
             if (CheckAjaxType == "XMLHttpRequest")
             {
                 
@@ -70,12 +70,7 @@ namespace AjaxRequest.Controllers
             return Ok(emp);
         }
 
-        [HttpPost]
-        public IActionResult ajax(int id)
-        {
-            //var course = _Context.Employees.Where(x => x.Id == id).FirstOrDefault();
-            return RedirectToAction("Details");
-        }
+
 
 
         [HttpGet]
@@ -111,6 +106,6 @@ namespace AjaxRequest.Controllers
             _Context.SaveChanges();
             return RedirectToAction("Index");
         }
-        //git
+       
     }
 }
