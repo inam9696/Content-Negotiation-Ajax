@@ -57,15 +57,16 @@ namespace AjaxRequest.Controllers
             }
             
             return View(emp);
-            //return Redirect("~/Views/Content/Details.cshtml");
+            //return Redirect("~/Views/Employee/Details.cshtml");
         }
 
 
         //Content Negotiation Action
         [HttpGet]
-        public IActionResult ContentNegotiation(int id)
+        public IActionResult ContentNegotiation(Employee employee)
         {
-            var emp = _Context.Employees.Where(x => x.Id == id).FirstOrDefault();
+            var emp = _Context.Employees.ToList();
+            //var emp = _Context.Employees.Where(x => x.Id == id).FirstOrDefault();
             return Ok(emp);
         }
 
@@ -110,5 +111,6 @@ namespace AjaxRequest.Controllers
             _Context.SaveChanges();
             return RedirectToAction("Index");
         }
+        //git
     }
 }
