@@ -1,4 +1,4 @@
-# AjaxRequest
+# AjaxRequest 
 
 Run the Project. Select the "EmployeeList" from Navbar . Click on "Click" Button it's return to "Pritial View of Employee" if U Click on "Details" Button it's return "The Full View of Employee Details".
 
